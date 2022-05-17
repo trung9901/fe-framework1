@@ -36,7 +36,7 @@ export class AppComponent {
       avatar: 'https://demoda.vn/wp-content/uploads/2022/02/anh-lol-dep-lmht-hinh-nen-lol-cuc-ngau.jpg'
     },
     {
-      name: 'Mobeie',
+      name: 'Yasuo',
       dame: 10000,
       defend: 200,
       speed: 100,
@@ -46,6 +46,51 @@ export class AppComponent {
   ]
   studentName = 'Nguyen Huy Trung'
   studentMSV = 'PH13487'
+
+  // sự kiện 
+  showStatus = true
+  inputValue = {
+    name: '',
+    dame: '',
+    defend: '',
+    speed: '',
+    price: '',
+    avatar: ''
+  }
+  onClickBtn() {
+    this.showStatus = !this.showStatus
+  }
+  // inputAvatar = ''
+  // onInputAvatar(event: any) {
+  //   this.inputValue['avatar'] = event.target.value
+  // }
+  // // inputName = ''
+  // onInputName(event: any) {
+  //   this.inputValue['name'] = event.target.value
+  // }
+  onInput(event: any, key: 'name' | 'avatar' | 'speed' | 'dame' | 'defend' | 'price') {
+    this.inputValue[key] = event.target.value;
+  }
+  onSubmit() {
+    console.log(this.inputValue)
+
+    this.champs.push({
+      ...this.inputValue,
+      dame: +this.inputValue.dame,
+      defend: +this.inputValue.defend,
+      speed: +this.inputValue.speed,
+      price: +this.inputValue.price,
+    })
+    // Gán lại giá trị default cho this.inputValue
+    this.inputValue = {
+      name: '',
+      avatar: '',
+      dame: '',
+      defend: '',
+      speed: '',
+      price: '',
+    };
+  }
 }
 
 
