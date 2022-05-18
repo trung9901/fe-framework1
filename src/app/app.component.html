@@ -1,5 +1,8 @@
 <div class="container">
     <div class="">
+        <app-form></app-form>
+    </div>
+    <div class="">
         <p>Sự kiện</p>
         <button class="btn btn-primary" (click)="onClickBtn()">{{showStatus? "ẩn":"hiện"}} bảng dữ liệu</button>
     </div>
@@ -9,23 +12,28 @@
     </div>
     <div class="">
         <label for="input">Avatar</label>
-        <input type="text" id="input" class="form-control" (input)="onInput($event,'avatar')" [value]="inputValue.avatar">
+        <input type="text" id="input" class="form-control" (input)="onInput($event,'avatar')"
+            [value]="inputValue.avatar">
     </div>
     <div>
         <label for="input">Dame</label>
-        <input type="number" id="input" class="form-control" (input)="onInput($event, 'dame')" [value]="inputValue.dame">
+        <input type="number" id="input" class="form-control" (input)="onInput($event, 'dame')"
+            [value]="inputValue.dame">
     </div>
     <div>
         <label for="input">Speed</label>
-        <input type="number" id="input" class="form-control" (input)="onInput($event, 'speed')" [value]="inputValue.speed">
+        <input type="number" id="input" class="form-control" (input)="onInput($event, 'speed')"
+            [value]="inputValue.speed">
     </div>
     <div>
         <label for="input">Defend</label>
-        <input type="number" id="input" class="form-control" (input)="onInput($event, 'defend')" [value]="inputValue.defend">
+        <input type="number" id="input" class="form-control" (input)="onInput($event, 'defend')"
+            [value]="inputValue.defend">
     </div>
     <div>
         <label for="input">Price</label>
-        <input type="number" id="input" class="form-control" (input)="onInput($event, 'price')" [value]="inputValue.price">
+        <input type="number" id="input" class="form-control" (input)="onInput($event, 'price')"
+            [value]="inputValue.price">
     </div>
     <div class="">
         <button type="submit" class="btn btn-success" (click)="onSubmit()">Submit</button>

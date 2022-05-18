@@ -10,7 +10,8 @@ import { TableAvatarComponent } from './table/table-avatar/table-avatar.componen
 import { NameComponent } from './name/name.component';
 import { IdentityComponent } from './identity/identity.component';
 import { DameComponent } from './dame/dame.component';
-
+import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,12 +20,14 @@ import { DameComponent } from './dame/dame.component';
     TableAvatarComponent,
     NameComponent,
     IdentityComponent,
-    DameComponent
+    DameComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
