@@ -12,6 +12,7 @@ import { IdentityComponent } from './identity/identity.component';
 import { DameComponent } from './dame/dame.component';
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
+import { ShowValidateComponent } from './conponents/show-validate/show-validate.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     NameComponent,
     IdentityComponent,
     DameComponent,
-    FormComponent
+    FormComponent,
+    ShowValidateComponent
   ],
   imports: [
     BrowserModule,
