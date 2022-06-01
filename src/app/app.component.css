@@ -1,7 +1,15 @@
+.color-red {
+  color: red;
+}
+
+.color-blue {
+  color: blue;
+}
+
 .dn {
-    display: none;
+  display: none;
 }
 
 .db {
-    display: block;
+  display: block;
 }

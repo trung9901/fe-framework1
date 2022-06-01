@@ -5,82 +5,79 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+// Đây là nơi định nghĩa component và logic
 export class AppComponent {
-  title = 'angular';
-  name = 'trungnhph13487';
+  // Định nghĩa các biến,
+  // Các biến này có thể nhận được giá trị ở file html
+  title = 'angular we16301 FPT Poly';
+
+  // Khai báo thêm 1 số biến để html sử dụng
+  name = 'trung';
   class = 'we16301';
+
   students = [
     {
-      name: 'trung',
-      id: 'PH1',
+      name: 'tr4ung',
+      id: 'PH1111',
       status: 0
     },
-    {
-      name: 'trung',
-      id: 'PH2',
-      status: 0
-    },
-    {
-      name: 'trung',
-      id: 'PH3',
-      status: 1
-    }
+
   ];
+
   champs = [
     {
-      name: 'Lucian',
+      name: 'Zed',
       dame: 400,
       defend: 200,
       speed: 100,
       price: 6300,
-      avatar: 'https://demoda.vn/wp-content/uploads/2022/02/anh-lol-dep-lmht-hinh-nen-lol-cuc-ngau.jpg'
-    },
-    {
-      name: 'Yasuo',
-      dame: 10000,
-      defend: 200,
-      speed: 100,
-      price: 500,
-      avatar: 'https://demoda.vn/wp-content/uploads/2022/02/anh-lol-dep-lmht-hinh-nen-lol-cuc-ngau.jpg'
+      avatar: 'https://oneesports.blob.core.windows.net/cdn-data/sites/4/2021/08/pulsefire-lucian-lien-minh-huyen-thoai1.jpg'
     }
-  ]
-  studentName = 'Nguyen Huy Trung'
-  studentMSV = 'PH13487'
+  ];
+  // Định nghĩa biến để truyền sang file html
+  studentName = 'trungnhph13487';
+  studentId = 'PH13486';
 
-  // sự kiện 
-  showStatus = true
+  // Sự kiện
+  // Biến lưu trạng thái hiển thị bảng
+  showStatus = true;
+  onClickBtn() {
+    console.log("Btn clicked!");
+    this.showStatus = !this.showStatus;
+  }
+
+  // Sự kiện hiển thị giá trị của các ô input
   inputValue = {
     name: '',
+    avatar: '',
     dame: '',
     defend: '',
     speed: '',
     price: '',
-    avatar: ''
-  }
-  onClickBtn() {
-    this.showStatus = !this.showStatus
-  }
-  // inputAvatar = ''
-  // onInputAvatar(event: any) {
-  //   this.inputValue['avatar'] = event.target.value
-  // }
-  // // inputName = ''
-  // onInputName(event: any) {
-  //   this.inputValue['name'] = event.target.value
-  // }
+  };
   onInput(event: any, key: 'name' | 'avatar' | 'speed' | 'dame' | 'defend' | 'price') {
     this.inputValue[key] = event.target.value;
   }
+  // inputName = '';
+  // onInputName(event: any) {
+  //   this.inputValue['name'] = event.target.value;
+  // }
+  // inputAvatar = '';
+  // onInputAvatar(event: any) {
+  //   this.inputValue.avatar = event.target.value;
+  // }
   onSubmit() {
-    console.log(this.inputValue)
-
+    console.log('Giá trị obj các ô input', this.inputValue);
+    // push obj this.input vào mảng champs để thêm 1 dòng dữ liệu mới
+    // inputValue sẽ có cấu trúc như obj trong mảng champs
+    // cần format lại obj theo đúng cấu trúc dữ liệu trong champs
     this.champs.push({
       ...this.inputValue,
       dame: +this.inputValue.dame,
       defend: +this.inputValue.defend,
       speed: +this.inputValue.speed,
       price: +this.inputValue.price,
-    })
+    });
     // Gán lại giá trị default cho this.inputValue
     this.inputValue = {
       name: '',
@@ -92,5 +89,3 @@ export class AppComponent {
     };
   }
 }
-
-
